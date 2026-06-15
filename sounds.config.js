@@ -94,7 +94,7 @@ window.SOUND_CONFIG = {
         { label: 'Kaars wakkert',             file: 'church/prayer-voices' },
         { label: 'Kerkbellen',                file: 'church/church-bells' },
         { label: 'Hout bankje kraakt',        file: 'church/pew-creak' },
-        { label: 'Voetstappen',               file: 'church/footsteps' }
+        { label: 'Koor',                      file: 'church/choir' }
       ]
     }
   ]
