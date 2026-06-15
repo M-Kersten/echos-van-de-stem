@@ -378,7 +378,6 @@
           '<span class="location-icon">' + (ICONS[loc.icon] || ICONS.church) + '</span>' +
           '<div class="location-titles">' +
             '<h2 class="location-name">' + esc(loc.name) + '</h2>' +
-            '<span class="location-dutch">' + esc(loc.dutch || '') + '</span>' +
           '</div>';
         card.appendChild(head);
 
@@ -396,7 +395,7 @@
         btn.setAttribute('aria-pressed', 'false');
         btn.innerHTML =
           ICON_PLAY + ICON_STOP + EQUALIZER +
-          '<span class="label-play">Play ' + esc(loc.ambient.label || 'ambience') + '</span>' +
+          '<span class="label-play">' + esc(loc.ambient.label || 'ambience') + '</span>' +
           '<span class="label-stop">Stop ' + esc(loc.name) + ' ambience</span>';
         btn.addEventListener('click', function () {
           var nowPlaying = Engine.toggleAmbient(loc);
@@ -407,7 +406,7 @@
         // effects
         var efLabel = document.createElement('p');
         efLabel.className = 'effects-label';
-        efLabel.textContent = 'Sound effects';
+        efLabel.textContent = 'Geluidseffecten';
         card.appendChild(efLabel);
 
         var grid = document.createElement('div');
@@ -417,7 +416,7 @@
           eb.type = 'button';
           eb.className = 'effect-btn';
           eb.textContent = effect.label;
-          eb.setAttribute('aria-label', 'Play ' + effect.label);
+          eb.setAttribute('aria-label', effect.label);
           eb.addEventListener('click', function () {
             Engine.playEffect(effect);
             fire(eb);
@@ -441,7 +440,7 @@
         if (btn) btn.setAttribute('aria-pressed', active ? 'true' : 'false');
       }
       if (loc) {
-        this.npLocation.textContent = loc.name + ' · ' + (loc.dutch || '');
+        this.npLocation.textContent = loc.name + ' · ';
         this.npBar.hidden = false;
       } else {
         this.npBar.hidden = true;

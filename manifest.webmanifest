@@ -1,7 +1,7 @@
 {
-  "name": "Echoes of the Voice — Soundboard",
-  "short_name": "Echoes",
-  "description": "An immersive audio companion for the board game Echoes of the Voice, set in Utrecht.",
+  "name": "Echo's van de stem — Soundboard",
+  "short_name": "Echo",
+  "description": "Een companion app voor het bordspel",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

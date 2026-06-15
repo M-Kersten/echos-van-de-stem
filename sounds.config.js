@@ -24,82 +24,77 @@ window.SOUND_CONFIG = {
   locations: [
     {
       id: 'marketplace',
-      name: 'Marketplace',
-      dutch: 'De Markt',
+      name: 'De Markt',
       icon: 'market',
-      blurb: 'Stalls and footsteps beneath the Dom tower.',
-      ambient: { label: 'Busy Utrecht market', file: 'marketplace/ambient' },
+      blurb: 'Stadsgeluiden van een drukke dag op het Vredenburgplein',
+      ambient: { label: 'Drukke markt Utrecht', file: 'marketplace/ambient' },
       effects: [
-        { label: 'Rain',                    file: 'marketplace/rain' },
-        { label: 'Bicycle bell',            file: 'marketplace/bicycle-bell' },
-        { label: 'Passing conversation',    file: 'marketplace/dutch-conversation' },
-        { label: 'Distant church bells',    file: 'marketplace/distant-church-bells' },
-        { label: 'Footsteps',               file: 'marketplace/footsteps' },
-        { label: 'Vendor calling',          file: 'marketplace/vendor-call' }
-      ]
-    },
-    {
-      id: 'hospital',
-      name: 'Hospital',
-      dutch: 'Het Ziekenhuis',
-      icon: 'hospital',
-      blurb: 'Quiet corridors and the hush of waiting.',
-      ambient: { label: 'Quiet hospital ambience', file: 'hospital/ambient' },
-      effects: [
-        { label: 'Heart monitor',           file: 'hospital/heart-monitor' },
-        { label: 'Rolling cart',            file: 'hospital/rolling-cart' },
-        { label: 'Distant announcement',    file: 'hospital/announcement' },
-        { label: 'Door opening',            file: 'hospital/door-opening' },
-        { label: 'Cough',                   file: 'hospital/cough' },
-        { label: 'Footsteps',               file: 'hospital/footsteps' }
+        { label: 'Regen',                     file: 'marketplace/rain' },
+        { label: 'Fietsbel',                  file: 'marketplace/bicycle-bell' },
+        { label: 'Pratende mensen',           file: 'marketplace/dutch-conversation' },
+        { label: 'Kerkbellen in de verte',    file: 'marketplace/distant-church-bells' },
+        { label: 'Voetstappen',               file: 'marketplace/footsteps' },
+        { label: 'Luide verkoper',            file: 'marketplace/vendor-call' }
       ]
     },
     {
       id: 'cafe',
-      name: 'Café',
-      dutch: 'Het Café',
+      name: 'Het Café',
       icon: 'cafe',
-      blurb: 'Warm light, soft talk, the smell of coffee.',
-      ambient: { label: 'Cozy café ambience', file: 'cafe/ambient' },
+      blurb: 'Warm cafe in de avond, gezelligheid en drukte alom',
+      ambient: { label: 'Gezellige geluiden', file: 'cafe/ambient' },
       effects: [
-        { label: 'Espresso machine',        file: 'cafe/espresso-machine' },
-        { label: 'Cups and plates',         file: 'cafe/cups-and-plates' },
-        { label: 'Quiet chatter',           file: 'cafe/quiet-chatter' },
-        { label: 'Door opening',            file: 'cafe/door-opening' },
-        { label: 'Cash register',           file: 'cafe/cash-register' },
-        { label: 'Spoon stirring',          file: 'cafe/spoon-stirring' }
+        { label: 'Espresso machine',  file: 'cafe/espresso-machine' },
+        { label: 'Servies',           file: 'cafe/cups-and-plates' },
+        { label: 'Rustig gesprek',    file: 'cafe/quiet-chatter' },
+        { label: 'Openslaande deur',  file: 'cafe/door-opening' },
+        { label: 'Live muziek',       file: 'cafe/music' },
+        { label: 'Proost',            file: 'cafe/Cheers' }
+      ]
+    },
+    {
+      id: 'hospital',
+      name: 'Het UMC Ziekenhuis',
+      icon: 'hospital',
+      blurb: 'Stille gangen, wachtruimte',
+      ambient: { label: 'Rustige ziekenhuis geluiden', file: 'hospital/ambient' },
+      effects: [
+        { label: 'Hartritme monitor',     file: 'hospital/heart-monitor' },
+        { label: 'Bed op wielen',         file: 'hospital/rolling-cart' },
+        { label: 'Omroep in de verte',    file: 'hospital/announcement' },
+        { label: 'Openslaande deuren',    file: 'hospital/door-opening' },
+        { label: 'Hoesten',               file: 'hospital/cough' },
+        { label: 'Voetstappen',           file: 'hospital/footsteps' }
       ]
     },
     {
       id: 'flat',
-      name: 'Flat',
-      dutch: 'Het Appartement',
+      name: 'Het Appartement',
       icon: 'flat',
-      blurb: 'A small home, quiet and close.',
-      ambient: { label: 'Small apartment ambience', file: 'flat/ambient' },
+      blurb: 'Hoogbouw appartement in Overvecht',
+      ambient: { label: 'Rustige stadsgeluiden', file: 'flat/ambient' },
       effects: [
-        { label: 'Kettle boiling',          file: 'flat/kettle' },
-        { label: 'Phone vibration',         file: 'flat/phone-vibration' },
-        { label: 'Doorbell',                file: 'flat/doorbell' },
-        { label: 'Washing machine',         file: 'flat/washing-machine' },
-        { label: 'Clock ticking',           file: 'flat/clock-ticking' },
-        { label: 'Rain on the window',      file: 'flat/rain-window' }
+        { label: 'Mensen in discussie',     file: 'flat/discussion' },
+        { label: 'Telefoon rinkelt',         file: 'flat/phone-vibration' },
+        { label: 'Deurbel',                 file: 'flat/doorbell' },
+        { label: 'Wasmachine',              file: 'flat/washing-machine' },
+        { label: 'Rennende kinderen',           file: 'flat/running-kids' },
+        { label: 'Hard waaiende wind',      file: 'flat/wind-blowing' }
       ]
     },
     {
       id: 'church',
-      name: 'Church',
-      dutch: 'De Kerk',
+      name: 'De Kerk',
       icon: 'church',
-      blurb: 'Stone, candlelight, and reverent stillness.',
-      ambient: { label: 'Reverent church atmosphere', file: 'church/ambient' },
+      blurb: 'Een avonddienst in de kerk',
+      ambient: { label: 'Zacht geluid van gebed in grote kerkzaal', file: 'church/ambient' },
       effects: [
-        { label: 'Organ music',             file: 'church/organ' },
-        { label: 'Pages turning',           file: 'church/pages-turning' },
-        { label: 'Soft prayer voices',      file: 'church/prayer-voices' },
-        { label: 'Church bells',            file: 'church/church-bells' },
-        { label: 'Wooden pew creak',        file: 'church/pew-creak' },
-        { label: 'Footsteps',               file: 'church/footsteps' }
+        { label: 'Orgel muziek',              file: 'church/organ' },
+        { label: 'Bijbel bladzijde om',       file: 'church/pages-turning' },
+        { label: 'Kaars wakkert',             file: 'church/prayer-voices' },
+        { label: 'Kerkbellen',                file: 'church/church-bells' },
+        { label: 'Hout bankje kraakt',        file: 'church/pew-creak' },
+        { label: 'Voetstappen',               file: 'church/footsteps' }
       ]
     }
   ]

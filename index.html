@@ -3,16 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Echoes of the Voice — Soundboard</title>
-  <meta name="description" content="An immersive audio companion for the board game Echoes of the Voice, set in Utrecht." />
+  <title>Echo's van de Stem — Soundboard</title>
+  <meta name="description" content="Een companion app voor het bordspel" />
 
   <!-- Theme / mobile web-app -->
   <meta name="theme-color" content="#7c3a2b" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="Echoes" />
-  <meta name="mobile-web-app-capable" content="yes" />
-
+  <meta name="mobile-web-app-capable" content="yes" />Een companion app voor het bordspel
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="icon" href="icon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="icon.svg" />
@@ -27,7 +26,7 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <a class="skip-link" href="#locations">Skip to locations</a>
+  <a class="skip-link" href="#locations">Door naar locaties</a>
 
   <header class="site-header">
     <svg class="ornament-cross" viewBox="0 0 48 64" aria-hidden="true" focusable="false">
@@ -37,17 +36,16 @@
       </g>
       <circle cx="24" cy="22" r="3.4" fill="none" stroke="currentColor" stroke-width="1.4" />
     </svg>
-    <h1 class="site-title">Echoes of the Voice</h1>
-    <p class="site-subtitle">A soundboard companion &middot; Utrecht</p>
-    <p class="site-verse">&ldquo;In the beginning was the Word.&rdquo;</p>
+    <h1 class="site-title">Echo's van de stem</h1>
+    <p class="site-subtitle">Een soundboard app &middot; Met geluiden uit Utrecht</p>
     <div class="rule" role="presentation"></div>
   </header>
 
   <section class="controls" aria-label="Sound controls">
-    <h2 class="controls-title">Sound</h2>
+    <h2 class="controls-title">Geluid</h2>
     <div class="control">
       <label for="ambientVol">
-        <span class="control-name">Ambient volume</span>
+        <span class="control-name">Achtergrond volume</span>
         <span class="control-val" id="ambientVolVal">80%</span>
       </label>
       <input type="range" id="ambientVol" min="0" max="100" value="80"
@@ -74,18 +72,14 @@
 
   <footer class="site-footer">
     <div class="rule" role="presentation"></div>
-    <p>A digital companion for <em>Echoes of the Voice</em>.</p>
-    <p class="footer-hint">
-      Replace the clips in the <code>/audio</code> folder to use your own
-      recordings &mdash; see the README for details.
-    </p>
+    <p>A digitale geluiden app voor <em>Echo's van de Stem</em>.</p>
   </footer>
 
   <!-- Sticky "now playing" bar -->
   <div class="now-playing" id="nowPlaying" hidden>
     <span class="np-pulse" aria-hidden="true"><i></i><i></i><i></i></span>
     <span class="np-text">
-      <span class="np-label">Now playing</span>
+      <span class="np-label">Nu speelt</span>
       <span class="np-location" id="npLocation"></span>
     </span>
     <button type="button" class="np-stop" id="npStop" aria-label="Stop ambient sound">
