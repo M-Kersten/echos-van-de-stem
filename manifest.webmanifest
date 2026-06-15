@@ -1,0 +1,19 @@
+{
+  "name": "Echoes of the Voice — Soundboard",
+  "short_name": "Echoes",
+  "description": "An immersive audio companion for the board game Echoes of the Voice, set in Utrecht.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#efe3c8",
+  "theme_color": "#7c3a2b",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

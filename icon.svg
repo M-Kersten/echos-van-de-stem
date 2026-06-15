@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Echoes of the Voice">
+  <defs>
+    <radialGradient id="paper" cx="42%" cy="36%" r="75%">
+      <stop offset="0%" stop-color="#f6ecd4"/>
+      <stop offset="70%" stop-color="#e8d8b2"/>
+      <stop offset="100%" stop-color="#d8c193"/>
+    </radialGradient>
+  </defs>
+
+  <!-- parchment field (safe area kept within the central 80%) -->
+  <rect width="512" height="512" fill="url(#paper)"/>
+  <rect x="26" y="26" width="460" height="460" rx="40" fill="none"
+        stroke="#b08a4a" stroke-width="6" opacity="0.7"/>
+
+  <!-- sound echoes radiating outward -->
+  <g fill="none" stroke="#8a5a34" stroke-linecap="round" opacity="0.8">
+    <path d="M150 196 A86 86 0 0 0 150 316" stroke-width="12"/>
+    <path d="M120 166 A130 130 0 0 0 120 346" stroke-width="10" opacity="0.6"/>
+    <path d="M362 196 A86 86 0 0 1 362 316" stroke-width="12"/>
+    <path d="M392 166 A130 130 0 0 1 392 346" stroke-width="10" opacity="0.6"/>
+  </g>
+
+  <!-- central cross -->
+  <g fill="#7c3a2b">
+    <rect x="240" y="158" width="32" height="200" rx="14"/>
+    <rect x="196" y="214" width="120" height="30" rx="13"/>
+  </g>
+  <circle cx="256" cy="229" r="15" fill="none" stroke="#b08a4a" stroke-width="6"/>
+</svg>

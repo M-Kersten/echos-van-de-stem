@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Echoes of the Voice — Soundboard</title>
+  <meta name="description" content="An immersive audio companion for the board game Echoes of the Voice, set in Utrecht." />
+
+  <!-- Theme / mobile web-app -->
+  <meta name="theme-color" content="#7c3a2b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Echoes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="icon.svg" />
+
+  <!-- Elegant serif typography (loads when online, falls back gracefully offline) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#locations">Skip to locations</a>
+
+  <header class="site-header">
+    <svg class="ornament-cross" viewBox="0 0 48 64" aria-hidden="true" focusable="false">
+      <g fill="currentColor">
+        <rect x="21" y="5" width="6" height="54" rx="2.5" />
+        <rect x="7" y="19" width="34" height="6" rx="2.5" />
+      </g>
+      <circle cx="24" cy="22" r="3.4" fill="none" stroke="currentColor" stroke-width="1.4" />
+    </svg>
+    <h1 class="site-title">Echoes of the Voice</h1>
+    <p class="site-subtitle">A soundboard companion &middot; Utrecht</p>
+    <p class="site-verse">&ldquo;In the beginning was the Word.&rdquo;</p>
+    <div class="rule" role="presentation"></div>
+  </header>
+
+  <section class="controls" aria-label="Sound controls">
+    <h2 class="controls-title">Sound</h2>
+    <div class="control">
+      <label for="ambientVol">
+        <span class="control-name">Ambient volume</span>
+        <span class="control-val" id="ambientVolVal">80%</span>
+      </label>
+      <input type="range" id="ambientVol" min="0" max="100" value="80"
+             aria-describedby="ambientVolVal" />
+    </div>
+    <div class="control">
+      <label for="effectVol">
+        <span class="control-name">Effects volume</span>
+        <span class="control-val" id="effectVolVal">90%</span>
+      </label>
+      <input type="range" id="effectVol" min="0" max="100" value="90"
+             aria-describedby="effectVolVal" />
+    </div>
+  </section>
+
+  <main id="locations" class="locations">
+    <!-- Location cards are rendered here by app.js -->
+    <noscript>
+      <p class="noscript-note">
+        This soundboard needs JavaScript enabled to play audio.
+      </p>
+    </noscript>
+  </main>
+
+  <footer class="site-footer">
+    <div class="rule" role="presentation"></div>
+    <p>A digital companion for <em>Echoes of the Voice</em>.</p>
+    <p class="footer-hint">
+      Replace the clips in the <code>/audio</code> folder to use your own
+      recordings &mdash; see the README for details.
+    </p>
+  </footer>
+
+  <!-- Sticky "now playing" bar -->
+  <div class="now-playing" id="nowPlaying" hidden>
+    <span class="np-pulse" aria-hidden="true"><i></i><i></i><i></i></span>
+    <span class="np-text">
+      <span class="np-label">Now playing</span>
+      <span class="np-location" id="npLocation"></span>
+    </span>
+    <button type="button" class="np-stop" id="npStop" aria-label="Stop ambient sound">
+      Stop
+    </button>
+  </div>
+
+  <script src="sounds.config.js"></script>
+  <script src="app.js" defer></script>
+</body>
+</html>
