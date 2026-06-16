@@ -588,3 +588,11 @@ input[type="range"]:focus-visible::-moz-range-thumb { outline: 3px solid var(--r
 .badge-sterk { background: var(--ink); }
 .badge-sluimerend { background: var(--ink-faint); }
 .badge-plek { background: var(--gold); }
+
+/* Personagefoto's als knoop-icoon */
+.web-node .node-bg { fill: #f1e3c2; }            /* terugval als de foto nog ontbreekt */
+.web-node image { pointer-events: none; }
+.web-node.has-icon .node-dot { fill: none; stroke-width: 1.8; }   /* ring rond de foto */
+/* houd de foto zichtbaar wanneer de knoop actief/geselecteerd is */
+.web-node.has-icon.is-active .node-dot,
+.web-node.has-icon.is-selected .node-dot { fill: none; }

@@ -17,10 +17,11 @@
   if (!CFG) return;
 
   var SVGNS = 'http://www.w3.org/2000/svg';
+  var XLINK = 'http://www.w3.org/1999/xlink';
 
   // viewBox-afmetingen (geometrie in deze eenheden; CSS schaalt naar de breedte)
   var VW = 124, VH = 122;
-  var CX = 62, CY = 60, R = 39, NODE_R = 7, CENTER_R = 14, LABEL_GAP = 9;
+  var CX = 62, CY = 60, R = 39, NODE_R = 9, CENTER_R = 14, LABEL_GAP = 17;
 
   function el(tag, attrs) {
     var e = document.createElementNS(SVGNS, tag);
@@ -123,15 +124,35 @@
       Object.keys(this.nodes).forEach(function (id) {
         var node = self.nodes[id];
         var r = node.isCenter ? CENTER_R : NODE_R;
+        var hasIcon = !node.isCenter && !!node.data.icon;
         var group = el('g', {
-          'class': 'web-node' + (node.isCenter ? ' center' : ''),
+          'class': 'web-node' + (node.isCenter ? ' center' : '') + (hasIcon ? ' has-icon' : ''),
           role: 'button',
           tabindex: '0'
         });
         group.setAttribute('aria-label', node.data.name + ' — bekijk verbindingen');
 
         group.appendChild(el('circle', { 'class': 'node-hit', cx: node.x, cy: node.y, r: r + 4 }));
-        group.appendChild(el('circle', { 'class': 'node-dot', cx: node.x, cy: node.y, r: r }));
+
+        if (hasIcon) {
+          // Knip de personagefoto rond in de knoop; toon een rand erbovenop.
+          var clipId = 'web-clip-' + id;
+          var clip = el('clipPath', { id: clipId });
+          clip.appendChild(el('circle', { cx: node.x, cy: node.y, r: r }));
+          group.appendChild(clip);
+          group.appendChild(el('circle', { 'class': 'node-bg', cx: node.x, cy: node.y, r: r }));
+          var img = el('image', {
+            x: node.x - r, y: node.y - r, width: r * 2, height: r * 2,
+            preserveAspectRatio: 'xMidYMid slice',
+            'clip-path': 'url(#' + clipId + ')'
+          });
+          img.setAttribute('href', node.data.icon);              // modern browsers
+          img.setAttributeNS(XLINK, 'xlink:href', node.data.icon); // oudere Safari
+          group.appendChild(img);
+          group.appendChild(el('circle', { 'class': 'node-dot', cx: node.x, cy: node.y, r: r }));
+        } else {
+          group.appendChild(el('circle', { 'class': 'node-dot', cx: node.x, cy: node.y, r: r }));
+        }
 
         if (node.isCenter) {
           // Tweeregelig label binnen de middelste knoop.

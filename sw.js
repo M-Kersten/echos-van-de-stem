@@ -9,7 +9,7 @@
  *
  * Bump CACHE_VERSION whenever the shell files change to refresh the cache.
  */
-var CACHE_VERSION = 'eotv-v2';
+var CACHE_VERSION = 'eotv-v3';
 
 var SHELL = [
   './',
