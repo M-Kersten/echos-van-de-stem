@@ -66,15 +66,19 @@
           group: null
         };
       }
-      this.nodes[CFG.center.id] = { data: CFG.center, x: CX, y: CY, isCenter: true, group: null };
+      if (CFG.center) {
+        this.nodes[CFG.center.id] = { data: CFG.center, x: CX, y: CY, isCenter: true, group: null };
+      }
     },
 
-    // Verzamel alle lijnen: personage-personage plus elk personage naar het midden.
+    // Verzamel alle lijnen: personage-personage plus (optioneel) elk personage naar het midden.
     allLinks: function () {
       var links = (CFG.links || []).slice();
-      (CFG.centerLinks || []).forEach(function (cl) {
-        links.push({ a: CFG.center.id, b: cl.id, type: 'plek', desc: cl.desc });
-      });
+      if (CFG.center) {
+        (CFG.centerLinks || []).forEach(function (cl) {
+          links.push({ a: CFG.center.id, b: cl.id, type: 'plek', desc: cl.desc });
+        });
+      }
       return links;
     },
 
