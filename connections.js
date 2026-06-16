@@ -262,8 +262,10 @@
         (edge.type === 'sterk' ? strong : dormant).push(name);
       });
 
-      var html = '<h3 class="web-info-title">' + esc(node.data.name) + '</h3>' +
-                 '<p class="web-info-text">' + esc(node.data.blurb) + '</p>';
+      var html = '<h3 class="web-info-title">' + esc(node.data.name) + '</h3>';
+      var blurb = node.data.blurb;
+      var paras = Array.isArray(blurb) ? blurb : (blurb ? [blurb] : []);
+      paras.forEach(function (p) { html += '<p class="web-info-text">' + esc(p) + '</p>'; });
       if (strong.length) html += '<p class="web-info-line"><span class="dot dot-sterk"></span><strong>Sterke verbindingen:</strong> ' + esc(strong.join(', ')) + '</p>';
       if (dormant.length) html += '<p class="web-info-line"><span class="dot dot-sluimerend"></span><strong>Sluimerend:</strong> ' + esc(dormant.join(', ')) + '</p>';
       this.info.innerHTML = html;
