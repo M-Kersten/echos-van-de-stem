@@ -1,7 +1,7 @@
 {
   "name": "Echo's van de stem — Soundboard",
   "short_name": "Echo",
-  "description": "Een companion app voor het bordspel",
+  "description": "Een metgezel-app voor het bordspel Echo's van de Stem, met geluiden uit Utrecht.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
@@ -9,7 +9,7 @@
   <meta name="theme-color" content="#7c3a2b" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="apple-mobile-web-app-title" content="Echoes" />
+  <meta name="apple-mobile-web-app-title" content="Echo's" />
   <meta name="mobile-web-app-capable" content="yes" />
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="icon" href="icon.svg" type="image/svg+xml" />
@@ -40,7 +40,7 @@
     <div class="rule" role="presentation"></div>
   </header>
 
-  <section class="controls" aria-label="Sound controls">
+  <section class="controls" aria-label="Geluidsinstellingen">
     <h2 class="controls-title">Geluid</h2>
     <div class="control">
       <label for="ambientVol">
@@ -52,7 +52,7 @@
     </div>
     <div class="control">
       <label for="effectVol">
-        <span class="control-name">Effects volume</span>
+        <span class="control-name">Effecten volume</span>
         <span class="control-val" id="effectVolVal">90%</span>
       </label>
       <input type="range" id="effectVol" min="0" max="100" value="90"
@@ -61,27 +61,27 @@
   </section>
 
   <main id="locations" class="locations">
-    <!-- Location cards are rendered here by app.js -->
+    <!-- Locatiekaarten worden hier door app.js opgebouwd -->
     <noscript>
       <p class="noscript-note">
-        This soundboard needs JavaScript enabled to play audio.
+        Voor deze soundboard moet JavaScript zijn ingeschakeld om geluid af te spelen.
       </p>
     </noscript>
   </main>
 
   <footer class="site-footer">
     <div class="rule" role="presentation"></div>
-    <p>A digitale geluiden app voor <em>Echo's van de Stem</em>.</p>
+    <p>Een digitale geluiden-app voor <em>Echo's van de Stem</em>.</p>
   </footer>
 
-  <!-- Sticky "now playing" bar -->
+  <!-- Sticky "nu speelt"-balk -->
   <div class="now-playing" id="nowPlaying" hidden>
     <span class="np-pulse" aria-hidden="true"><i></i><i></i><i></i></span>
     <span class="np-text">
       <span class="np-label">Nu speelt</span>
       <span class="np-location" id="npLocation"></span>
     </span>
-    <button type="button" class="np-stop" id="npStop" aria-label="Stop ambient sound">
+    <button type="button" class="np-stop" id="npStop" aria-label="Stop achtergrondgeluid">
       Stop
     </button>
   </div>

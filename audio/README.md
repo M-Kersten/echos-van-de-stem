@@ -1,72 +1,77 @@
-# Audio files
+# Audiobestanden
 
-Drop your sound files into these folders. The app loads them by name, so the
-**filenames must match** the list below (the extension is set by `audioFormat`
-in `../sounds.config.js`, which defaults to `.mp3`).
+Zet je geluidsbestanden in deze mappen. De app laadt ze op naam, dus de
+**bestandsnamen moeten exact kloppen** met de lijst hieronder (de extensie wordt
+ingesteld via `audioFormat` in `../sounds.config.js`, standaard `.mp3`).
 
-Until a file exists, the soundboard plays a gentle placeholder tone instead, so
-everything is usable while you are still recording or sourcing audio.
+Zolang een bestand nog niet bestaat, speelt de soundboard in plaats daarvan een
+zachte plaatsvervangende toon, zodat alles bruikbaar is terwijl je nog opneemt of
+geluiden zoekt.
 
-## What goes where
+## Wat hoort waar
 
-Each location has **one ambient loop** (`ambient.*`) plus several **one-shot
-effects**. Ambient loops should be seamless (loopable) and a minute or more is
-ideal. Effects should be short.
+Elke locatie heeft **één achtergrondloop** (`ambient.*`) plus meerdere losse
+**effecten**. Achtergrondloops moeten naadloos zijn (loopbaar); een minuut of
+langer is ideaal. Effecten moeten kort zijn.
+
+De namen hieronder komen overeen met `sounds.config.js`. Pas dat bestand aan als
+je geluiden wilt hernoemen, toevoegen of verwijderen.
 
 ```
 audio/
 ├── marketplace/
-│   ├── ambient.mp3                  Busy Utrecht market atmosphere (loop)
-│   ├── rain.mp3
-│   ├── bicycle-bell.mp3
-│   ├── dutch-conversation.mp3       Passing conversation in Dutch
-│   ├── distant-church-bells.mp3
-│   ├── footsteps.mp3
-│   └── vendor-call.mp3              Vendor calling customers
-│
-├── hospital/
-│   ├── ambient.mp3                  Quiet Dutch hospital ambience (loop)
-│   ├── heart-monitor.mp3
-│   ├── rolling-cart.mp3
-│   ├── announcement.mp3             Distant announcement
-│   ├── door-opening.mp3
-│   ├── cough.mp3
-│   └── footsteps.mp3
+│   ├── ambient.mp3                  Drukke markt Utrecht (loop)
+│   ├── rain.mp3                     Regen
+│   ├── bicycle-bell.mp3             Fietsbel
+│   ├── dutch-conversation.mp3       Pratende mensen
+│   ├── distant-church-bells.mp3     Kerkbellen in de verte
+│   ├── footsteps.mp3                Voetstappen
+│   └── vendor-call.mp3              Luide verkoper
 │
 ├── cafe/
-│   ├── ambient.mp3                  Cozy Utrecht café ambience (loop)
-│   ├── espresso-machine.mp3
-│   ├── cups-and-plates.mp3
-│   ├── quiet-chatter.mp3
-│   ├── door-opening.mp3
-│   ├── cash-register.mp3
-│   └── spoon-stirring.mp3
+│   ├── ambient.mp3                  Gezellige geluiden (loop)
+│   ├── espresso-machine.mp3         Espresso machine
+│   ├── cups-and-plates.mp3          Servies
+│   ├── quiet-chatter.mp3            Rustig gesprek
+│   ├── door-opening.mp3             Openslaande deur
+│   ├── music.mp3                    Live muziek
+│   └── Cheers.mp3                   Proost
+│
+├── hospital/
+│   ├── ambient.mp3                  Rustige ziekenhuis geluiden (loop)
+│   ├── heart-monitor.mp3            Hartritme monitor
+│   ├── rolling-cart.mp3             Bed op wielen
+│   ├── announcement.mp3             Omroep in de verte
+│   ├── door-opening.mp3             Openslaande deuren
+│   ├── cough.mp3                    Hoesten
+│   └── footsteps.mp3                Voetstappen
 │
 ├── flat/
-│   ├── ambient.mp3                  Small Dutch apartment ambience (loop)
-│   ├── kettle.mp3
-│   ├── phone-vibration.mp3
-│   ├── doorbell.mp3
-│   ├── washing-machine.mp3
-│   ├── clock-ticking.mp3
-│   └── rain-window.mp3              Rain against the window
+│   ├── ambient.mp3                  Rustige stadsgeluiden (loop)
+│   ├── discussion.mp3               Mensen in discussie
+│   ├── phone-vibration.mp3          Telefoon rinkelt
+│   ├── doorbell.mp3                 Deurbel
+│   ├── washing-machine.mp3          Wasmachine
+│   ├── running-kids.mp3             Rennende kinderen
+│   └── wind-blowing.mp3             Hard waaiende wind
 │
 └── church/
-    ├── ambient.mp3                  Reverent church atmosphere (loop)
-    ├── organ.mp3
-    ├── pages-turning.mp3
-    ├── prayer-voices.mp3            Soft prayer voices
-    ├── church-bells.mp3
-    ├── pew-creak.mp3                Wooden pew creak
-    └── footsteps.mp3
+    ├── ambient.mp3                  Zacht geluid van gebed in grote kerkzaal (loop)
+    ├── organ.mp3                    Orgel muziek
+    ├── pages-turning.mp3            Bijbel bladzijde om
+    ├── prayer-voices.mp3            Kaars wakkert
+    ├── church-bells.mp3             Kerkbellen
+    ├── pew-creak.mp3                Hout bankje kraakt
+    └── choir.mp3                    Koor
 ```
 
 ## Tips
 
-- **Format:** MP3 works on every modern phone and desktop browser. To use a
-  different format (e.g. `ogg` or `m4a`), change `audioFormat` in
-  `sounds.config.js` and use that extension for every file.
-- **File size:** keep ambient loops reasonably compressed (96–128 kbps mono is
-  plenty) so they load quickly and cache well for offline use.
-- **Adding or renaming sounds:** edit `sounds.config.js` — the `file:` value is
-  the path here without the extension (e.g. `marketplace/rain`).
+- **Formaat:** MP3 werkt op elke moderne telefoon en desktopbrowser. Wil je een
+  ander formaat gebruiken (bijv. `ogg` of `m4a`), wijzig dan `audioFormat` in
+  `sounds.config.js` en gebruik die extensie voor elk bestand.
+- **Bestandsgrootte:** houd achtergrondloops redelijk gecomprimeerd (96–128 kbps
+  mono is ruim voldoende), zodat ze snel laden en goed in de cache passen voor
+  offline gebruik.
+- **Let op hoofdletters:** bestandsnamen zijn hoofdlettergevoelig. `Cheers.mp3`
+  moet bijvoorbeeld exact zo heten als in `sounds.config.js` staat.

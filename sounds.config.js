@@ -1,25 +1,25 @@
 /*
- * Echoes of the Voice — sound configuration
- * ------------------------------------------
- * This is the ONLY file you need to edit to change the sounds.
+ * Echo's van de Stem — geluidsconfiguratie
+ * ----------------------------------------
+ * Dit is het ENIGE bestand dat je hoeft aan te passen om de geluiden te wijzigen.
  *
- * Each clip points to a file inside the /audio folder. You give the path
- * WITHOUT the file extension (the extension from `audioFormat` is added for
- * you). For example, the entry  file: 'marketplace/rain'  with
- * audioFormat: 'mp3'  will load  audio/marketplace/rain.mp3
+ * Elke clip verwijst naar een bestand in de map /audio. Je geeft het pad op
+ * ZONDER de bestandsextensie (de extensie uit `audioFormat` wordt er voor je
+ * achter gezet). Het item  file: 'marketplace/rain'  met  audioFormat: 'mp3'
+ * laadt bijvoorbeeld  audio/marketplace/rain.mp3
  *
- * To replace a sound, simply drop a new file with the matching name into the
- * right folder. To add a sound, add a new line to the `effects` list.
+ * Wil je een geluid vervangen? Zet dan een nieuw bestand met dezelfde naam in
+ * de juiste map. Een geluid toevoegen? Voeg een regel toe aan de `effects`-lijst.
  *
- * Until you add your own recordings, the app plays gentle placeholder tones
- * so the soundboard is fully usable straight away. Once your audio files are
- * in place you can leave `synthFallback` on (it only triggers for files that
- * are missing) or set it to false to disable placeholders entirely.
+ * Zolang je nog geen eigen opnamen hebt toegevoegd, speelt de app zachte
+ * plaatsvervangende tonen, zodat de soundboard meteen bruikbaar is. Zodra je
+ * audiobestanden klaarstaan kun je `synthFallback` aan laten staan (de tonen
+ * klinken dan alleen voor ontbrekende bestanden) of op false zetten.
  */
 window.SOUND_CONFIG = {
-  audioFormat: 'mp3',     // file extension used for every clip (e.g. 'mp3', 'ogg', 'm4a')
-  fadeMs: 1800,           // ambient fade-in / fade-out duration, in milliseconds
-  synthFallback: true,    // play a soft placeholder tone when an audio file is missing
+  audioFormat: 'mp3',     // extensie van elke clip (bijv. 'mp3', 'ogg', 'm4a')
+  fadeMs: 1800,           // duur van het in- en uitfaden van de achtergrond, in milliseconden
+  synthFallback: true,    // speel een zachte plaatsvervangende toon als een audiobestand ontbreekt
 
   locations: [
     {

@@ -395,8 +395,8 @@
         btn.setAttribute('aria-pressed', 'false');
         btn.innerHTML =
           ICON_PLAY + ICON_STOP + EQUALIZER +
-          '<span class="label-play">' + esc(loc.ambient.label || 'ambience') + '</span>' +
-          '<span class="label-stop">Stop ' + esc(loc.name) + ' ambience</span>';
+          '<span class="label-play">' + esc(loc.ambient.label || 'achtergrond') + '</span>' +
+          '<span class="label-stop">Stop ' + esc(loc.name) + '</span>';
         btn.addEventListener('click', function () {
           var nowPlaying = Engine.toggleAmbient(loc);
           self.setActiveLocation(nowPlaying ? loc : null);
@@ -440,7 +440,7 @@
         if (btn) btn.setAttribute('aria-pressed', active ? 'true' : 'false');
       }
       if (loc) {
-        this.npLocation.textContent = loc.name + ' · ';
+        this.npLocation.textContent = loc.name;
         this.npBar.hidden = false;
       } else {
         this.npBar.hidden = true;

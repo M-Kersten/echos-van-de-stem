@@ -1,88 +1,92 @@
-# Echoes of the Voice — Soundboard
+# Echo's van de Stem — Soundboard
 
-A single-page, mobile-friendly **soundboard** that provides immersive audio for
-the board game *Echoes of the Voice*, set in Utrecht, the Netherlands. It is a
-digital companion for play: choose a location and let its soundscape fill the
-room while you trigger one-shot effects to bring scenes to life.
+Een mobielvriendelijke **soundboard** op één pagina die meeslepende audio levert
+voor het bordspel *Echo's van de Stem*, dat zich afspeelt in Utrecht. Het is een
+digitale metgezel tijdens het spelen: kies een locatie en laat de sfeer de kamer
+vullen, terwijl je losse effecten afspeelt om scènes tot leven te brengen.
 
-Pure HTML, CSS and JavaScript. No backend, no accounts, no build step. It works
-offline once loaded and can be added to a phone's home screen.
+Pure HTML, CSS en JavaScript. Geen back-end, geen accounts, geen build-stap. De
+soundboard werkt offline zodra hij geladen is en kan op het beginscherm van een
+telefoon worden gezet.
 
-## Locations
+## Locaties
 
-Five locations, each with one looping ambient soundscape and several one-shot
-effects:
+Vijf locaties, elk met één doorlopende achtergrondsfeer en meerdere losse effecten:
 
-1. **Marketplace** — *De Markt*
-2. **Hospital** — *Het Ziekenhuis*
-3. **Café** — *Het Café*
-4. **Flat** — *Het Appartement*
-5. **Church** — *De Kerk*
+1. **De Markt**
+2. **Het UMC Ziekenhuis**
+3. **Het Café**
+4. **Het Appartement**
+5. **De Kerk**
 
-## How it works
+## Hoe het werkt
 
-- Tap a location's large button to **start its ambient loop**. It fades in.
-- Tap it again to **stop** it (fades out), or tap another location to
-  **cross-fade** to that one. Only one ambient loop ever plays at a time.
-- Tap any **effect** button to play a one-shot sound over the ambient. Several
-  effects can overlap, and they keep playing while the ambience continues.
-- Two sliders set the **ambient** and **effects** volumes independently. Your
-  settings are remembered on the device.
-- A bar at the bottom always shows what is currently playing, with a quick Stop.
+- Tik op de grote knop van een locatie om de **achtergrondsfeer te starten**. Die
+  fade-t in.
+- Tik er nogmaals op om te **stoppen** (fade-t uit), of tik op een andere locatie
+  om er naartoe te **crossfaden**. Er speelt altijd maar één sfeer tegelijk.
+- Tik op een **effect**-knop om een los geluid over de sfeer heen af te spelen.
+  Meerdere effecten kunnen tegelijk klinken en de sfeer loopt gewoon door.
+- Twee schuiven regelen het **achtergrond-** en **effectenvolume** los van elkaar.
+  Je instellingen worden op het apparaat onthouden.
+- Een balk onderaan toont altijd wat er speelt, met een snelle Stop-knop.
 
-### Placeholder sounds
+### Plaatsvervangende geluiden
 
-The app ships with **no audio files** so the repository stays small. Until you
-add your own, every button plays a soft synthesised placeholder tone, so the
-interface is fully testable straight away. Add real files and the placeholders
-disappear automatically (see below).
+Voor geluiden waarvoor nog geen audiobestand bestaat, speelt de soundboard een
+zachte gesynthetiseerde plaatsvervangende toon, zodat de interface meteen te
+testen is. Voeg een echt bestand toe en de plaatsvervanger verdwijnt vanzelf
+(zie hieronder).
 
-## Adding your own audio
+## Je eigen audio toevoegen
 
-1. Put your sound files in the `audio/<location>/` folders.
-2. Use the exact filenames listed in [`audio/README.md`](audio/README.md)
-   (e.g. `audio/marketplace/rain.mp3`).
+1. Zet je geluidsbestanden in de mappen `audio/<locatie>/`.
+2. Gebruik exact de bestandsnamen uit [`audio/README.md`](audio/README.md)
+   (bijv. `audio/marketplace/rain.mp3`).
 
-To rename, add, or remove sounds — or to change the file format — edit
-[`sounds.config.js`](sounds.config.js). It is the single place that defines the
-locations, labels, and file paths. No other code needs to change.
+Wil je geluiden hernoemen, toevoegen of verwijderen — of het bestandsformaat
+wijzigen — pas dan [`sounds.config.js`](sounds.config.js) aan. Dat is de enige
+plek waar de locaties, labels en bestandspaden worden gedefinieerd. Er hoeft geen
+andere code te veranderen.
 
-## Running it
+## Uitvoeren
 
-It's a static site, so any of these work:
+Het is een statische site, dus al deze manieren werken:
 
-- **Quickest:** open `index.html` directly in a browser. (Audio plays; the
-  offline service worker only activates when served over http/https.)
-- **Local server** (recommended, enables offline caching):
+- **Snelste:** open `index.html` direct in een browser. (Audio speelt; de
+  offline service worker werkt alleen wanneer de site via http/https wordt
+  aangeboden.)
+- **Lokale server** (aanbevolen, schakelt offline caching in):
 
   ```sh
   # Python 3
   python3 -m http.server 8000
-  # then open http://localhost:8000
+  # open daarna http://localhost:8000
   ```
 
-- **Hosting:** upload the folder to any static host (GitHub Pages, Netlify,
-  etc.). On a phone, use the browser's *Add to Home Screen* to run it
-  full-screen like an app.
+- **Hosting:** upload de map naar elke statische host (GitHub Pages, Netlify,
+  enz.). Gebruik op een telefoon de optie *Aan beginscherm toevoegen* om de site
+  schermvullend te draaien, net als een app.
 
-> Audio on phones requires a tap to begin — this is a browser rule. Since every
-> sound here is started by tapping a button, it just works on iOS and Android.
+> Audio op telefoons begint pas na een tik — dat is een browserregel. Omdat elk
+> geluid hier met een knop wordt gestart, werkt het gewoon op iOS en Android.
 
-## Files
+## Bestanden
 
-| File | Purpose |
+| Bestand | Doel |
 | --- | --- |
-| `index.html` | Page structure |
-| `styles.css` | Parchment theme and responsive layout |
-| `sounds.config.js` | **Edit this** to change locations, sounds, and file paths |
-| `app.js` | Audio engine (fades, layering, volumes) and UI |
-| `sw.js` | Service worker for offline use |
-| `manifest.webmanifest`, `icon.svg` | Add-to-home-screen support |
-| `audio/` | Your sound files |
+| `index.html` | Paginastructuur |
+| `styles.css` | Perkamentthema en responsieve opmaak |
+| `sounds.config.js` | **Pas dit aan** om locaties, geluiden en bestandspaden te wijzigen |
+| `app.js` | Audio-engine (fades, gelaagdheid, volumes) en interface |
+| `sw.js` | Service worker voor offline gebruik |
+| `manifest.webmanifest`, `icon.svg` | Ondersteuning voor "aan beginscherm toevoegen" |
+| `audio/` | Je geluidsbestanden |
 
-## Design
+## Vormgeving
 
-A warm, contemplative, parchment-inspired look: aged paper, brown ink, muted
-earth tones, elegant serif type, and subtle Christian touches (a cross in the
-header and icon). No flashy modern UI — just large, touch-friendly controls
-meant to sit on the table during play.
+Een warme, beschouwende, op perkament geïnspireerde stijl: vergeeld papier,
+bruine inkt, gedempte aardetinten, elegante schreefletters en subtiele
+christelijke accenten (een kruis in de kop en het icoon). Geen opzichtige,
+moderne interface — alleen grote, vingervriendelijke knoppen, bedoeld om tijdens
+het spel op tafel te liggen.
