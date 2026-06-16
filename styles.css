@@ -510,7 +510,7 @@ input[type="range"]:focus-visible::-moz-range-thumb { outline: 3px solid var(--r
 .edge-sterk .edge-line { stroke: var(--ink); stroke-width: 2.2; }
 .edge-sluimerend .edge-line { stroke: var(--ink-faint); stroke-width: 1; stroke-dasharray: 2 2.4; }
 .edge-plek .edge-line { stroke: var(--gold); stroke-width: 0.9; opacity: 0.85; }
-.web-edge:focus-visible { outline: none; }
+.web-edge:focus, .web-node:focus { outline: none; }
 .web-edge:focus-visible .edge-line { stroke: var(--rust); }
 .web-edge.is-active .edge-line { stroke: var(--rust); opacity: 1; }
 .edge-sterk.is-active .edge-line { stroke-width: 3; }
