@@ -69,6 +69,23 @@
     </noscript>
   </main>
 
+  <section class="connections" aria-labelledby="web-title">
+    <h2 class="controls-title" id="web-title">Verbindingsweb</h2>
+    <p class="web-intro">De levens van zes personages raken elkaar. Sommige verbindingen zijn al actief, andere wachten om ontdekt te worden.</p>
+
+    <div class="web-stage">
+      <svg id="webSvg" role="group" aria-label="Verbindingsweb van de personages"></svg>
+    </div>
+
+    <ul class="web-legend">
+      <li><svg class="swatch" viewBox="0 0 24 8" aria-hidden="true"><line class="sw sw-sterk" x1="1" y1="4" x2="23" y2="4" /></svg> <span>Sterke verbinding &mdash; actief in het spel</span></li>
+      <li><svg class="swatch" viewBox="0 0 24 8" aria-hidden="true"><line class="sw sw-sluimerend" x1="1" y1="4" x2="23" y2="4" /></svg> <span>Sluimerende verbinding &mdash; zelf te ontdekken</span></li>
+      <li><svg class="swatch" viewBox="0 0 24 8" aria-hidden="true"><line class="sw sw-plek" x1="1" y1="4" x2="23" y2="4" /></svg> <span>Lijn naar de gedeelde plekken</span></li>
+    </ul>
+
+    <div class="web-info" id="webInfo" aria-live="polite"></div>
+  </section>
+
   <footer class="site-footer">
     <div class="rule" role="presentation"></div>
     <p>Een digitale geluiden-app voor <em>Echo's van de Stem</em>.</p>
@@ -88,5 +105,7 @@
 
   <script src="sounds.config.js"></script>
   <script src="app.js" defer></script>
+  <script src="connections.config.js"></script>
+  <script src="connections.js" defer></script>
 </body>
 </html>

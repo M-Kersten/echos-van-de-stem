@@ -473,3 +473,118 @@ input[type="range"]:focus-visible::-moz-range-thumb { outline: 3px solid var(--r
   .effect-btn.is-firing { animation: none; }
   * { transition-duration: 0.001ms !important; }
 }
+
+/* ===================================================== Verbindingsweb ===== */
+.connections {
+  max-width: 760px;
+  margin: 0 auto 26px;
+  padding: 18px 20px 22px;
+  background: var(--paper-card);
+  border: 1px solid var(--paper-edge);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 0 rgba(255, 250, 235, 0.5) inset, 0 4px 14px var(--shadow-soft);
+  width: calc(100% - 32px);
+}
+.web-intro {
+  color: var(--ink-soft);
+  text-align: center;
+  margin: 0 auto 6px;
+  max-width: 52ch;
+}
+.web-stage {
+  padding: 26px 20px 10px;
+  overflow: visible;
+}
+#webSvg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  touch-action: manipulation;
+}
+
+/* edges */
+.web-edge { cursor: pointer; transition: opacity 0.25s ease; }
+.web-edge .edge-line { fill: none; stroke-linecap: round; transition: stroke 0.2s ease, stroke-width 0.2s ease; }
+.web-edge .edge-hit { fill: none; stroke: transparent; stroke-width: 7; }
+.edge-sterk .edge-line { stroke: var(--ink); stroke-width: 2.2; }
+.edge-sluimerend .edge-line { stroke: var(--ink-faint); stroke-width: 1; stroke-dasharray: 2 2.4; }
+.edge-plek .edge-line { stroke: var(--gold); stroke-width: 0.9; opacity: 0.85; }
+.web-edge:focus-visible { outline: none; }
+.web-edge:focus-visible .edge-line { stroke: var(--rust); }
+.web-edge.is-active .edge-line { stroke: var(--rust); opacity: 1; }
+.edge-sterk.is-active .edge-line { stroke-width: 3; }
+.edge-sluimerend.is-active .edge-line { stroke-width: 1.8; }
+.edge-plek.is-active .edge-line { stroke-width: 1.6; }
+
+/* nodes */
+.web-node { cursor: pointer; }
+.web-node .node-hit { fill: transparent; }
+.web-node .node-dot {
+  fill: #f6ecd4;
+  stroke: var(--sienna);
+  stroke-width: 1.6;
+  transition: fill 0.2s ease, stroke 0.2s ease, stroke-width 0.2s ease;
+}
+.web-node.center .node-dot { stroke: var(--gold); stroke-width: 2.2; fill: #f1e3c2; }
+.web-node .node-label {
+  font-family: var(--serif);
+  font-size: 4.6px;
+  fill: var(--ink);
+  pointer-events: none;
+}
+.web-node.center .center-label { font-size: 3.6px; fill: var(--rust); text-anchor: middle; }
+.web-node.is-active .node-dot { fill: var(--gold-soft); stroke: var(--rust); }
+.web-node.is-selected .node-dot { stroke: var(--rust); stroke-width: 2.8; }
+.web-node:focus-visible .node-dot { stroke: var(--rust); stroke-width: 2.8; }
+.web-node.is-active .node-label { fill: var(--rust); font-weight: 500; }
+
+/* dimming inactive elements when something is selected */
+.web-edge.is-dim, .web-node.is-dim { opacity: 0.16; }
+
+/* legend */
+.web-legend {
+  list-style: none;
+  margin: 12px auto 4px;
+  padding: 0;
+  max-width: 52ch;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+}
+.web-legend li { display: flex; align-items: center; gap: 10px; padding: 3px 0; }
+.web-legend .swatch { flex: 0 0 auto; width: 30px; height: 10px; }
+.web-legend .sw { fill: none; stroke-linecap: round; }
+.web-legend .sw-sterk { stroke: var(--ink); stroke-width: 2.4; }
+.web-legend .sw-sluimerend { stroke: var(--ink-faint); stroke-width: 1.2; stroke-dasharray: 2.5 2.5; }
+.web-legend .sw-plek { stroke: var(--gold); stroke-width: 1.2; }
+
+/* info panel */
+.web-info {
+  margin-top: 12px;
+  padding: 14px 16px;
+  min-height: 84px;
+  background: linear-gradient(180deg, rgba(255, 252, 240, 0.7), rgba(231, 216, 179, 0.5));
+  border: 1px solid var(--paper-edge);
+  border-radius: 8px;
+  box-shadow: 0 1px 0 rgba(255, 250, 235, 0.7) inset;
+}
+.web-info-hint { margin: 0; color: var(--ink-faint); font-style: italic; }
+.web-info-title { font-family: var(--display); font-size: 1.2rem; color: var(--ink); margin: 0 0 4px; }
+.web-info-text { margin: 4px 0; color: var(--ink-soft); }
+.web-info-line { margin: 6px 0 0; font-size: 0.95rem; color: var(--ink-soft); }
+.web-info-line .dot { display: inline-block; width: 10px; height: 10px; margin-right: 6px; vertical-align: middle; border-radius: 2px; }
+.web-info-line .dot-sterk { background: var(--ink); }
+.web-info-line .dot-sluimerend { background: var(--ink-faint); }
+.web-info-badge {
+  display: inline-block;
+  margin: 2px 0 6px;
+  padding: 2px 10px;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  color: var(--paper-card);
+}
+.badge-sterk { background: var(--ink); }
+.badge-sluimerend { background: var(--ink-faint); }
+.badge-plek { background: var(--gold); }

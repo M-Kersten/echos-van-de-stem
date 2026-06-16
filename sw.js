@@ -9,7 +9,7 @@
  *
  * Bump CACHE_VERSION whenever the shell files change to refresh the cache.
  */
-var CACHE_VERSION = 'eotv-v1';
+var CACHE_VERSION = 'eotv-v2';
 
 var SHELL = [
   './',
@@ -17,6 +17,8 @@ var SHELL = [
   './styles.css',
   './sounds.config.js',
   './app.js',
+  './connections.config.js',
+  './connections.js',
   './manifest.webmanifest',
   './icon.svg'
 ];
